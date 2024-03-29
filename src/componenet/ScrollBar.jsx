@@ -11,7 +11,15 @@ const ScrollBar = () => {
       const response = await axios.get(
         `https://api.frontendexpert.io/api/fe/testimonials?limit=9&after=${pageText}`
       );
-      setData((prevData) => [...prevData, ...response.data.testimonials]);
+      // setData((prevData) => [...prevData, ...response.data.testimonials]);
+      setData((prevData) => {
+        const newData = response.data.testimonials.filter((newItem) => {
+          return !prevData.some(
+            (existingItem) => existingItem.id === newItem.id
+          );
+        });
+        return [...prevData, ...newData];
+      });
     } catch (error) {
       console.error("Error fetching data:", error);
     }
