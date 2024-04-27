@@ -53,13 +53,16 @@ const ScrollBar = () => {
         textAlign: "center",
       }}
     >
-      <h1>ScrollBar</h1>
+      <h1>Infinite ScrollBar</h1>
       <div className="scroll-bar-text">
         {data &&
           data.map((item) => (
             <div
               key={item.id}
-              style={{ backgroundColor: "#28231D", borderRadius: "5px" }}
+              style={{
+                backgroundColor: "rgb(5 50 103 / 95%)",
+                borderRadius: "5px",
+              }}
             >
               <p>
                 <strong>{item.id}: </strong>
@@ -68,6 +71,7 @@ const ScrollBar = () => {
             </div>
           ))}
       </div>
+      <p>Loading...</p>
     </div>
   );
 };

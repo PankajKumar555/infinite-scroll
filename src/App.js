@@ -1,4 +1,3 @@
-import "./App.css";
 import ScrollBar from "./componenet/ScrollBar";
 
 function App() {
